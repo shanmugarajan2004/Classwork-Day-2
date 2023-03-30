@@ -1,0 +1,30 @@
+#include<stdio.h>
+
+int power(int num, int exponent);
+
+int main()
+{
+    int num, exponent;
+
+    printf("Enter the number: ");
+    scanf("%d", &num);
+
+    printf("Enter the exponent: ");
+    scanf("%d", &exponent);
+
+    printf("%d^%d = %d", num, exponent, power(num, exponent));
+
+    return 0;
+}
+
+int power(int num, int exponent)
+{
+    if(exponent == 0)
+    {
+        return 1;
+    }
+    else
+    {
+        return num * power(num, exponent-1);
+    }
+}
