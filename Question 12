@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+void printEven(int n){
+  if(n==0) // base case
+    return;
+  if(n%2 == 0) // print even number
+    printf("%d ", n);
+  printEven(n-1); // recursive call
+}
+
+int main(){
+  int n;
+  printf("Enter a positive integer: ");
+  scanf("%d", &n);
+  printf("Even numbers between 1 and %d are: ", n);
+  printEven(n);
+  return 0;
+}
