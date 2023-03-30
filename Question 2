@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+void calculate_circle(float radius, float* diameter, float* circumference, float* area) {
+    *diameter = 2 * radius;
+    *circumference = 2 * 3.14159265358979323846 * radius;
+    *area = 3.14159265358979323846 * radius * radius;
+}
+
+int main() {
+    float radius, diameter, circumference, area;
+
+    printf("Enter the radius of the circle: ");
+    scanf("%f", &radius);
+
+    calculate_circle(radius, &diameter, &circumference, &area);
+
+    printf("Diameter: %f\n", diameter);
+    printf("Circumference: %f\n", circumference);
+    printf("Area: %f\n", area);
+
+    return 0;
+}
+Give feedback
