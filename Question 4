@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+// function to check even or odd
+int isEven(int num){
+    if(num%2 == 0)
+        return 1; // if num is even, return 1
+    else
+        return 0; // if num is odd, return 0
+}
+
+int main(){
+    int num;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    // call isEven() function to check even or odd
+    if(isEven(num))
+        printf("%d is even.\n", num);
+    else
+        printf("%d is odd.\n", num);
+
+    return 0;
+}
+
