@@ -1,0 +1,90 @@
+#include <stdio.h>
+
+// Function to swap two values
+void swap(int *a, int *b)
+{
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+// Function to sort array in ascending order
+void sortAscending(int *arr, int size)
+{
+    int i, j;
+    for (i = 0; i < size-1; i++) 
+    {
+        for (j = 0; j < size-i-1; j++) 
+        {
+            if (*(arr+j) > *(arr+j+1))
+            {
+                swap((arr+j), (arr+j+1));
+            }
+        }
+    }
+}
+
+// Function to sort array in descending order
+void sortDescending(int *arr, int size)
+{
+    int i, j;
+    for (i = 0; i < size-1; i++) 
+    {
+        for (j = 0; j < size-i-1; j++) 
+        {
+            if (*(arr+j) < *(arr+j+1))
+            {
+                swap((arr+j), (arr+j+1));
+            }
+        }
+    }
+}
+
+int main()
+{
+    int size, i;
+    
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+    
+    int arr[size];
+    
+    printf("Enter the elements of the array: ");
+    for (i = 0; i < size; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+    
+    int choice;
+    printf("Enter 1 to sort in ascending order and 2 to sort in descending order: ");
+    scanf("%d", &choice);
+    
+    // Function pointer to sort array in ascending or descending order
+    void (*sort)(int *, int);
+    
+    if (choice == 1)
+    {
+        sort = sortAscending;
+    }
+    else if (choice == 2)
+    {
+        sort = sortDescending;
+    }
+    else
+    {
+        printf("Invalid choice\n");
+        return 0;
+    }
+    
+    // Sort the array using function pointer
+    sort(arr, size);
+    
+    // Print the sorted array
+    printf("Sorted array: ");
+    for (i = 0; i < size; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    
+    return 0;
+}
