@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+   int arr[50], n, i, *p, num;
+
+   printf("Enter number of elements in array: ");
+   scanf("%d", &n);
+
+   printf("Enter %d elements:\n", n);
+   for (i = 0; i < n; i++)
+      scanf("%d", &arr[i]);
+
+   printf("Enter number to search: ");
+   scanf("%d", &num);
+
+   p = arr; // pointer pointing to the first element of the array
+
+   for (i = 0; i < n; i++) {
+      if (*p == num) {
+         printf("%d found at location %d.\n", num, i+1);
+         break;
+      }
+      p++; // moving the pointer to point to the next element of the array
+   }
+
+   if (i == n)
+      printf("%d not found in the array.\n", num);
+
+   return 0;
+}
