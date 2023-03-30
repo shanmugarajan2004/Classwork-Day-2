@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int isPalindrome(int num, int temp) {
+    // base case
+    if (num == 0) {
+        return temp;
+    }
+    // recursive case
+    temp = (temp * 10) + (num % 10);
+    return isPalindrome(num / 10, temp);
+}
+
+int main() {
+    int num, temp = 0;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    if (num == isPalindrome(num, temp)) {
+        printf("%d is a palindrome number.", num);
+    } else {
+        printf("%d is not a palindrome number.", num);
+    }
+    return 0;
+}
