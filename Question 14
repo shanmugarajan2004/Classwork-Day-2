@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int sumOfNaturalNumbers(int n);
+
+int main() {
+    int n;
+    printf("Enter a positive integer: ");
+    scanf("%d", &n);
+    printf("Sum of natural numbers from 1 to %d is %d\n", n, sumOfNaturalNumbers(n));
+    return 0;
+}
+
+int sumOfNaturalNumbers(int n) {
+    if (n == 1) {
+        return 1;
+    } else {
+        return n + sumOfNaturalNumbers(n-1);
+    }
+}
+
